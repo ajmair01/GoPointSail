@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "go-point-sail": {
+    "ng-point-sail": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/go-point-sail",
+            "outputPath": "dist/ng-point-sail",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -30,7 +30,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -62,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "go-point-sail:build:production"
+              "buildTarget": "ng-point-sail:build:production"
             },
             "development": {
-              "buildTarget": "go-point-sail:build:development"
+              "buildTarget": "ng-point-sail:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "go-point-sail:build"
+            "buildTarget": "ng-point-sail:build"
           }
         },
         "test": {

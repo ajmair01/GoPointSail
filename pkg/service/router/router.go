@@ -1,6 +1,7 @@
 package router
 
 import (
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"log/slog"
 	"net/http"
@@ -11,6 +12,12 @@ import (
 
 func StartRouter() {
 	router := gin.Default()
+
+	cors.Default()
+	router.Use(cors.New(cors.Config{
+		AllowOrigins: []string{"*"},
+		AllowHeaders: []string{"Content-Type", "Origin"},
+	}))
 
 	router.GET("/users", getUsers)
 	router.POST("/users", postUser)

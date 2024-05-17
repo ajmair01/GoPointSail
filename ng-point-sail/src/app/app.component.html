@@ -1,0 +1,15 @@
+<ul ngbNav [activeId]="router.url" class="nav-tabs">
+  <li class="navbar-brand">
+    <h1>Go Point Sail</h1>
+  </li>
+  <li ngbNavItem="/login">
+    <a ngbNavLink routerLink="/login">Login</a>
+  </li>
+  <li ngbNavItem="/users">
+    <a ngbNavLink routerLink="/users">Users</a>
+  </li>
+  <li ngbNavItem="/groups">
+    <a ngbNavLink routerLink="/groups">Groups</a>
+  </li>
+</ul>
+<router-outlet/>
