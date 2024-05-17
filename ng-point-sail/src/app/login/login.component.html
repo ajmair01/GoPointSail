@@ -1,0 +1,52 @@
+<div class="container text-center">
+  <div class="row justify-content-md-center">
+    <div class="col col-lg-6">
+      <div class="card" *ngIf="!signup">
+        <div class="card-header">
+          Login
+        </div>
+        <div class="card-body">
+          <form>
+            <label for="userNameLogin">User Name/Email:</label><br/>
+            <input name="userName" id="userNameLogin" type="text" [(ngModel)]="user.userName"><br/>
+            <label for="passwordLogin">Password:</label><br/>
+            <input name="password" id="passwordLogin" type="text" [(ngModel)]="user.password">
+          </form>
+        </div>
+        <div class="card-footer">
+          <span>New User? </span>
+          <button class="btn btn-primary" (click)="signup = true">Sign Up</button>
+        </div>
+      </div>
+      <div class="card" *ngIf="signup">
+        <div class="card-header">
+          Sign Up
+        </div>
+        <div class="card-body">
+          <form>
+            <label for="firstName">First Name:</label><br/>
+            <input name="firstName" id="firstName" type="text" [(ngModel)]="user.firstName"><br/>
+            <label for="lastName">Last Name:</label><br/>
+            <input name="lastName" id="lastName" type="text" [(ngModel)]="user.lastName"><br/>
+            <label for="middleInitial">Middle Initial:</label><br/>
+            <input name="middleInitial" id="middleInitial" type="text" [(ngModel)]="user.middleInitial"><br/>
+            <label for="userNameSignup">User Name:</label><br/>
+            <input name="userName" id="userNameSignup" type="text" [(ngModel)]="user.userName"><br/>
+            <label for="email">Email:</label><br/>
+            <input name="email" id="email" type="text" [(ngModel)]="user.email"><br/>
+            <label for="passwordSignup">Password:</label><br/>
+            <input name="password" id="passwordSignup" type="text" [(ngModel)]="user.password"><br/>
+            <label for="confirmPassword">Confirm Password:</label><br/>
+            <input name="confirmPassword" id="confirmPassword" type="text" [(ngModel)]="user.confirmPassword"><br/>
+            <br/>
+            <button type="button" class="btn btn-success" (click)="submitSignup()">Submit</button>
+          </form>
+        </div>
+        <div class="card-footer">
+          <span>Already have an account? </span>
+          <button class="btn btn-primary" (click)="signup = false">Log In</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
