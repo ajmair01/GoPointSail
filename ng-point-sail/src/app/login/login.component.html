@@ -1,4 +1,4 @@
-<div class="container text-center">
+<div class="container text-center mt-5">
   <div class="row justify-content-md-center">
     <div class="col col-lg-6">
       <div class="card" *ngIf="!signup">
@@ -7,10 +7,12 @@
         </div>
         <div class="card-body">
           <form>
-            <label for="userNameLogin">User Name/Email:</label><br/>
-            <input name="userName" id="userNameLogin" type="text" [(ngModel)]="user.userName"><br/>
+            <label for="emailLogin">User Name/Email:</label><br/>
+            <input name="emailLogin" id="emailLogin" type="text" [(ngModel)]="user.email"><br/>
             <label for="passwordLogin">Password:</label><br/>
-            <input name="password" id="passwordLogin" type="text" [(ngModel)]="user.password">
+            <input name="password" id="passwordLogin" type="text" [(ngModel)]="user.password"><br/>
+            <br/>
+            <button type="button" class="btn btn-success" (click)="login()">Log In</button>
           </form>
         </div>
         <div class="card-footer">
@@ -32,6 +34,8 @@
             <input name="middleInitial" id="middleInitial" type="text" [(ngModel)]="user.middleInitial"><br/>
             <label for="userNameSignup">User Name:</label><br/>
             <input name="userName" id="userNameSignup" type="text" [(ngModel)]="user.userName"><br/>
+            <label for="phone">Phone Number:</label><br/>
+            <input name="phone" id="phone" type="tel" [(ngModel)]="user.phone" mask="(000) 000-0000"><br/>
             <label for="email">Email:</label><br/>
             <input name="email" id="email" type="text" [(ngModel)]="user.email"><br/>
             <label for="passwordSignup">Password:</label><br/>

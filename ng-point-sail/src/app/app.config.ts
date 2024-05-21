@@ -5,7 +5,8 @@ import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {UserService} from "./service/user.service";
 import {HttpClient, HttpClientModule, HttpHandler} from "@angular/common/http";
+import {provideEnvironmentNgxMask} from "ngx-mask";
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideAnimationsAsync(), importProvidersFrom(HttpClientModule), UserService]
+  providers: [provideRouter(routes), provideAnimationsAsync(), importProvidersFrom(HttpClientModule), UserService, provideEnvironmentNgxMask()]
 };
